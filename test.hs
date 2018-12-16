@@ -13,7 +13,7 @@ data HList (xs :: [*]) where
 infixr 1 :::
 
 instance Each Eq xs => Eq (HList xs) where
-  HNil == HNil = True 
+  HNil       == HNil       = True 
   (x ::: xs) == (y ::: ys) = x == y && xs == ys
 
 main = print $ (1 ::: "foo" ::: HNil) == (2 ::: "bar" ::: HNil)
